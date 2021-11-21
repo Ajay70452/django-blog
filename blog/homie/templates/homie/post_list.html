@@ -8,17 +8,12 @@
             <h1><a href="/">Ajay's Blog</a></h1>
         </header>
 
+        {% for post in posts %}
         <article>
-            <time>published: 21.11.21, 12:14</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Hi guys this is my first post. I have maade this blog from scratch using django as a backend.
-            I know this seems shitty and useless right now. But ruko zara sabar karo improvement on the way he</p>
+            <time>published: {{ post.published_date }}</time>
+            <h2><a href="">{{ post.title }}</a></h2>
+             <p>{{ post.text|linebreaksbr }}</p>
         </article>
-
-        <article>
-            <time>published: 21.11.21, 16:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>This is second post. I just realized my leg hurts and i should start studying for exams.</p>
-        </article>
+    {% endfor %}
     </body>
 </html>
